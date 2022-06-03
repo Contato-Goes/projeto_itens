@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Base</title>
+</head>
+<body>
+
+    <div class="div_item">
+        <img src="./assets/swrd.png" alt="">
+        <button onclick="pick_up()">Try pick up</button>
+    </div>
+</body>
+</html>
+<script>
+
+    function pick_up(){
+        // a linha abaixo irar gerar um numero aletorio entre 0 e 100)
+        // o .floor reitira a parte flutuante (tudo depois do zero)
+        // o 100 é o range da aleatoridade inde de 0 a 100
+        // o +1 é para nunca sair o resultado 0
+        var tentativa = Math.floor(Math.random() * 100 + 1)
+        // o de cima é o seu numero e o de baixo é o numero do item 
+        var resultado = Math.floor(Math.random() * 100 + 1)
+
+        //a logica sera a seguinte, se o seu numero for maior ou igual ao do item vc pega
+        //se não perde
+        if (tentativa >= resultado) {
+            alert("Você conseguiu pegar.")
+            console.log('A tentativa foi:',tentativa)
+            console.log('O resultado foi:',resultado)
+        }else {
+            alert("Você não conseguiu pegar, mais sorte na proxima.")
+            console.log('a tentativa foi:',tentativa)
+            console.log('O resultado foi:',resultado)
+        }
+
+    }
+
+</script>
